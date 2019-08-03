@@ -2,7 +2,8 @@ import {
   SIGN_IN,
   SET_TOKEN_FROM_LOCAL,
   NO_TOKEN_IN_LOCAL,
-  SIGN_UP
+  SIGN_UP,
+  SIGN_OUT
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -26,6 +27,13 @@ export default (state = INITIAL_STATE, action) => {
         token: action.payload.accessToken
       };
 
+    case SIGN_OUT:
+      return {
+        ...state,
+        isSignedIn: false,
+        token: null
+      };
+
     case SET_TOKEN_FROM_LOCAL:
       return {
         ...state,
@@ -38,7 +46,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         isSignedIn: false,
         token: null
-      }
+      };
 
     default:
       return state;

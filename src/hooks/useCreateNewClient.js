@@ -1,11 +1,20 @@
 import {useDispatch} from "react-redux";
 import { addNewClient} from "../actions";
+import tokenIsExpired from "../helpers/tokenIsExpired";
+import {signOut} from "../actions/authActions";
 
 const useCreateNewClient = (handleClose) => {
   const dispatch = useDispatch();
 
   const handleClientSubmit = async (values, actions) => {
     try {
+      if (tokenIsExpired()) {
+        actions.setSubmitting(false);
+        actions.resetForm();
+        handleClose();
+        dispatch(signOut());
+      }
+
       const sanitizedValues = {...values};
       const regex = /[()\s-]+/g;
       sanitizedValues.phoneNumber = sanitizedValues.phoneNumber.replace(regex, '');

@@ -1,12 +1,12 @@
 import React from 'react';
-import {AppBar, Toolbar, Typography, Button, IconButton} from "@material-ui/core";
-import {PeopleOutlined, DateRangeOutlined, AttachMoney} from '@material-ui/icons';
+import {AppBar, Button, IconButton, Toolbar, Typography} from "@material-ui/core";
+import {AttachMoney, DateRangeOutlined, PeopleOutlined} from '@material-ui/icons';
 import {withTheme} from '@material-ui/core/styles';
 
 import styles from './styles';
 import useNavbar from "../../hooks/useNavbar";
 import {useSelector} from "react-redux";
-import history from "../../history";
+import history from "../../helpers/history";
 
 const Navbar = ({theme}) => {
   const css = styles();

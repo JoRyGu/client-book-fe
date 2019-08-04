@@ -1,6 +1,6 @@
-import { useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import { signIn } from '../actions';
+import {useRef} from 'react';
+import {useDispatch} from 'react-redux';
+import {signIn} from '../actions';
 
 function useSignInEventHandlers() {
   const signInRef = useRef();
@@ -26,7 +26,7 @@ function useSignInEventHandlers() {
       errors.email === 'Invalid Email or Password' &&
       errors.password === 'Invalid Email or Password'
     ) {
-      signInRef.current.setValues({ email: '', password: '' });
+      signInRef.current.setValues({email: '', password: ''});
     }
   };
 

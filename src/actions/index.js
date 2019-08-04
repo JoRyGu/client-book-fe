@@ -1,5 +1,5 @@
-import {signIn, signUp, setTokenFromLocalStorage} from './authActions';
-import {fetchClients, addNewClient} from './clientActions';
+import {setTokenFromLocalStorage, signIn, signUp} from './authActions';
+import {addNewClient, fetchClients} from './clientActions';
 
 export {
   signIn,

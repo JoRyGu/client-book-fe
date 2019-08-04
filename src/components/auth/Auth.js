@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useSelector} from "react-redux";
-import history from "../../history";
+import history from "../../helpers/history";
 
 const Auth = (props) => {
   const isSignedIn = useSelector(state => state.auth.isSignedIn);

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Container, TextField, Button, useMediaQuery} from "@material-ui/core";
+import {Button, Container, TextField, useMediaQuery} from "@material-ui/core";
 import {PersonAddOutlined} from '@material-ui/icons';
 
 import ClientCard from './ClientCard';
@@ -35,11 +35,12 @@ const Clients = () => {
                    label="Search Clients"
                    className={css.search}
         />
-        <Button variant="contained" color="secondary" className={css.addClientButton} onClick={handleNewClientClickOpen}>
+        <Button variant="contained" color="secondary" className={css.addClientButton}
+                onClick={handleNewClientClickOpen}>
           <PersonAddOutlined className={css.buttonIcon}/>
           New Client
         </Button>
-        <NewClientDialogue open={newClientOpen} handleClose={handleNewClientClose} fullscreen={fullscreen} />
+        <NewClientDialogue open={newClientOpen} handleClose={handleNewClientClose} fullscreen={fullscreen}/>
       </div>
       <div className={css.container}>
         {

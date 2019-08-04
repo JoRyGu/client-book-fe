@@ -1,6 +1,6 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
-import { TextField } from 'formik-material-ui';
+import {Field, Form, Formik} from 'formik';
+import {TextField} from 'formik-material-ui';
 import Button from '@material-ui/core/Button';
 
 import useStyles from './styles';
@@ -15,7 +15,7 @@ function SignInForm() {
     <div className={css.signInContainer}>
       <h2 className={css.signInHeader}>Sign In</h2>
       <Formik
-        initialValues={{ email: '', password: '' }}
+        initialValues={{email: '', password: ''}}
         validationSchema={SignInSchema}
         onSubmit={handleFormSubmit}
         ref={signInRef}

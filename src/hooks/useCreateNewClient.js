@@ -1,17 +1,21 @@
 import {useDispatch} from "react-redux";
-import { addNewClient} from "../actions";
+import {addNewClient} from "../actions";
 import tokenIsExpired from "../helpers/tokenIsExpired";
 import {signOut} from "../actions/authActions";
 
 const useCreateNewClient = (handleClose) => {
   const dispatch = useDispatch();
 
-  const handleClientSubmit = async (values, actions) => {
+  async function handleClientSubmit(values, actions) {
+    function resetForm() {
+      actions.setSubmitting(false);
+      actions.resetForm();
+      handleClose();
+    }
+
     try {
       if (tokenIsExpired()) {
-        actions.setSubmitting(false);
-        actions.resetForm();
-        handleClose();
+        resetForm();
         dispatch(signOut());
       }
 
@@ -27,13 +31,11 @@ const useCreateNewClient = (handleClose) => {
 
       dispatch(addNewClient(sanitizedValues));
 
-      actions.setSubmitting(false);
-      actions.resetForm();
-      handleClose();
+      resetForm();
     } catch (err) {
       console.log(err);
     }
-  };
+  }
 
   return [handleClientSubmit];
 };

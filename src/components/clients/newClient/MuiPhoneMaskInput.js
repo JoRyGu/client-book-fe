@@ -1,6 +1,6 @@
 import React from 'react';
 import MaskedInput from "react-text-mask";
-import {FormControl, InputLabel, Input, FormHelperText} from "@material-ui/core";
+import {FormControl, FormHelperText, Input, InputLabel} from "@material-ui/core";
 
 
 const CustomTextMask = (props) => {
@@ -15,7 +15,7 @@ const CustomTextMask = (props) => {
   );
 };
 
-export default ({ field, form }) => {
+export default ({field, form}) => {
   return (
     <FormControl
       fullWidth

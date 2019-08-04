@@ -1,10 +1,4 @@
-import {
-  SIGN_IN,
-  SET_TOKEN_FROM_LOCAL,
-  NO_TOKEN_IN_LOCAL,
-  SIGN_UP,
-  SIGN_OUT
-} from '../actions/types';
+import {NO_TOKEN_IN_LOCAL, SET_TOKEN_FROM_LOCAL, SIGN_IN, SIGN_OUT, SIGN_UP} from '../actions/types';
 
 const INITIAL_STATE = {
   isSignedIn: null,

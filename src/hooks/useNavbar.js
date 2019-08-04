@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 const useNavbar = (breakpoints) => {
   const [isMobile, setIsMobile] = useState(null);

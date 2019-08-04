@@ -1,7 +1,7 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
-import { TextField } from 'formik-material-ui';
-import { Button } from '@material-ui/core';
+import {Field, Form, Formik} from 'formik';
+import {TextField} from 'formik-material-ui';
+import {Button} from '@material-ui/core';
 
 import useStyles from './styles';
 import SignUpSchema from '../../validation/SignUpSchema';
@@ -16,7 +16,7 @@ const SignUpForm = () => {
     <div className={css.signInContainer}>
       <h2 className={css.signInHeader}>Sign Up</h2>
       <Formik
-        initialValues={{ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }}
+        initialValues={{firstName: '', lastName: '', email: '', password: '', confirmPassword: ''}}
         validationSchema={SignUpSchema}
         onSubmit={handleFormSubmit}
         ref={signUpRef}
@@ -76,6 +76,6 @@ const SignUpForm = () => {
       </Formik>
     </div>
   );
-}
+};
 
 export default SignUpForm;

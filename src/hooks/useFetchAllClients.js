@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {fetchClients} from "../actions";
 
@@ -12,7 +12,7 @@ const useFetchAllClients = () => {
     }
   }, [dispatch, state.auth.isSignedIn]);
 
-  const { allClients } = state.clients;
+  const {allClients} = state.clients;
 
   return allClients;
 };

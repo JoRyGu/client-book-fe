@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { setTokenFromLocalStorage } from '../actions';
+import {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import {setTokenFromLocalStorage} from '../actions';
 
 function useSetTokenFromLocal() {
   const dispatch = useDispatch();

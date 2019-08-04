@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardHeader, CardContent, Avatar, Typography} from "@material-ui/core";
+import {Avatar, Card, CardContent, CardHeader, Typography} from "@material-ui/core";
 
 import styles from './styles';
 
@@ -16,7 +16,7 @@ const ClientCard = ({name, email, phoneNumber}) => {
         }
         title={name}
         className={css.cardHeader}
-        titleTypographyProps={{ variant: 'h6'}}
+        titleTypographyProps={{variant: 'h6'}}
       />
       <CardContent className={css.cardBody}>
         <Typography variant="subtitle1">

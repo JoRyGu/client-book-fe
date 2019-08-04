@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import SwipeableViews from 'react-swipeable-views';
-import { useTheme } from '@material-ui/core/styles';
+import {useTheme} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -10,13 +10,13 @@ import useStyles from './styles';
 import SignInForm from './SignInForm';
 import SignUpForm from './SignUpForm';
 import {useSelector} from "react-redux";
-import history from "../../history";
+import history from "../../helpers/history";
 
 function TabContainer(props) {
-  const { children, dir } = props;
+  const {children, dir} = props;
 
   return (
-    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+    <Typography component="div" dir={dir} style={{padding: 8 * 3}}>
       {children}
     </Typography>
   );
@@ -53,8 +53,8 @@ export default function FloatingActionButtonZoom() {
           textColor="primary"
           variant="fullWidth"
         >
-          <Tab label="Sign In" />
-          <Tab label="Sign Up" />
+          <Tab label="Sign In"/>
+          <Tab label="Sign Up"/>
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -63,10 +63,10 @@ export default function FloatingActionButtonZoom() {
         onChangeIndex={handleChangeIndex}
       >
         <TabContainer dir={theme.direction}>
-          <SignInForm />
+          <SignInForm/>
         </TabContainer>
         <TabContainer dir={theme.direction}>
-          <SignUpForm />
+          <SignUpForm/>
         </TabContainer>
       </SwipeableViews>
     </div>

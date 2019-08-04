@@ -13,7 +13,7 @@ const NewClientSchema = Yup.object().shape({
       let numberCount = 0;
       if (value !== undefined) {
         for (let i = 0; i < value.length; i++) {
-          if(/[0-9]/.test(value[i])) {
+          if (/[0-9]/.test(value[i])) {
             numberCount++;
           }
         }

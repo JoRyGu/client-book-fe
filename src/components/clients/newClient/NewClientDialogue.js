@@ -1,17 +1,7 @@
 import React from 'react';
-import {
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  Button,
-  FormControl,
-  InputLabel,
-  Input, FormHelperText
-} from "@material-ui/core";
-import {Form, Formik, Field} from 'formik';
+import {Button, Dialog, DialogActions, DialogContent, DialogTitle,} from "@material-ui/core";
+import {Field, Form, Formik} from 'formik';
 import {TextField} from 'formik-material-ui';
-import MaskedInput from 'react-text-mask';
 
 import NewClientSchema from "../../../validation/NewClientSchema";
 import styles from './styles';
@@ -85,38 +75,6 @@ const NewClientDialogue = ({open, handleClose, fullscreen}) => {
       )}
     />
 
-  );
-};
-
-const CustomTextMask = (props) => {
-  const {inputRef, ...other} = props;
-
-  return (
-    <MaskedInput
-      {...other}
-      ref={ref => inputRef(ref ? ref.inputElement : null)}
-      mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
-    />
-  );
-};
-
-const MaterialMask = ({ field, form }) => {
-  return (
-    <FormControl
-      fullWidth
-      margin="normal"
-      error={form.touched['phoneNumber'] === true && form.errors.phoneNumber !== undefined}
-      disabled={form.isSubmitting}
-    >
-      <InputLabel htmlFor="phoneNumberLabel">Phone Number</InputLabel>
-      <Input
-        id="phoneNumberLabel"
-        inputComponent={CustomTextMask} {...field}
-      />
-      {
-        form.touched['phoneNumber'] ? <FormHelperText error>{form.errors.phoneNumber}</FormHelperText> : null
-      }
-    </FormControl>
   );
 };
 

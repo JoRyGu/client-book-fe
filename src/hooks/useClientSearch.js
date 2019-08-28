@@ -14,7 +14,7 @@ const useClientSearch = () => {
     if (search === "") {
       setFoundClients(allClients);
     } else {
-      const filteredClients = foundClients.filter(client => {
+      const filteredClients = allClients.filter(client => {
         return (
           client.name.toLowerCase().includes(search.toLowerCase()) ||
           client.email.toLowerCase().includes(search.toLowerCase()) ||

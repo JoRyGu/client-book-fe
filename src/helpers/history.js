@@ -1,3 +1,3 @@
-import {createBrowserHistory} from 'src/helpers/history';
+import { createBrowserHistory } from "history";
 
 export default createBrowserHistory();

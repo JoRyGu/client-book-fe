@@ -1,9 +1,9 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from "react";
 import useFetchAllClients from "./useFetchAllClients";
 
 const useClientSearch = () => {
   const allClients = useFetchAllClients();
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [foundClients, setFoundClients] = useState([]);
 
   useEffect(() => {
@@ -11,20 +11,22 @@ const useClientSearch = () => {
   }, [allClients]);
 
   useEffect(() => {
-    if (search === '') {
+    if (search === "") {
       setFoundClients(allClients);
     } else {
       const filteredClients = foundClients.filter(client => {
-        return client.name.toLowerCase().includes(search.toLowerCase()) ||
+        return (
+          client.name.toLowerCase().includes(search.toLowerCase()) ||
           client.email.toLowerCase().includes(search.toLowerCase()) ||
-          client.phoneNumber.toLowerCase().includes(search.toLowerCase());
+          client.phoneNumber.toLowerCase().includes(search.toLowerCase())
+        );
       });
 
       setFoundClients(filteredClients);
     }
-  }, [search, allClients, foundClients]);
+  }, [search, allClients]);
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = e => {
     setSearch(e.target.value);
   };
 

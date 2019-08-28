@@ -1,7 +1,7 @@
 # Demo Project
 
 ```
-[Demo](https://frozen-chamber-35002.herokuapp.com)
+[I'm an inline-style link](https://www.google.com)
 ```
 
 ### Login For Demo

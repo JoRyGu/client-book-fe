@@ -1,7 +1,7 @@
 # Demo Project
 
 ```
-[https://frozen-chamber-35002.herokuapp.com](https://frozen-chamber-35002.herokuapp.com)
+[Demo](https://frozen-chamber-35002.herokuapp.com)
 ```
 
 ### Login For Demo
